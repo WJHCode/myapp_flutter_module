@@ -10,10 +10,11 @@ class MyApp extends StatelessWidget {
       title: 'Welcome to Flutter',
       home: new Scaffold(
         appBar: new AppBar(
-          title: new Text('Welcome to Flutter 页面'),
+          title: new Text('Welcome to Flutter 哈哈你好'),
         ),
         body: new Center(
-          child: new RandomWords(),
+          child: new Text("你猜猜我要干啥"),
+          // child: new RandomWords(),
         ),
       ),
     );
