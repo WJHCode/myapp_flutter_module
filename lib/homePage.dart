@@ -1,9 +1,49 @@
 import 'package:flutter/material.dart';
 import 'native_utils.dart';
+import 'package:flutter/cupertino.dart';
+
+
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    void _showCupertinoDialog(BuildContext context){
+      showCupertinoDialog(
+          context: context,
+          builder: (context){
+            return CupertinoAlertDialog(
+              title: Text('提示'),
+              content: Text('是都继续进行'),
+              actions: <Widget>[
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border(right: BorderSide(color: Color(0xFFD9D9D9), width: 0.5), top: BorderSide(color: Color(0xFFD9D9D9), width: 0.5)),
+                  ),
+                  child: CupertinoDialogAction(
+                    child: Text('确定'),
+                    onPressed: (){
+                      Navigator.pop(context);
+                    },
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      border: Border(
+                          top: BorderSide(color: Color(0xFFD9D9D9), width: 0.5))),
+                  child: CupertinoDialogAction(
+                    child: new Text("取消"),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                )
+              ],
+            );
+          });
+    }
+
+
     return new Container(
       child: new Scaffold(
           appBar: AppBar(
@@ -76,6 +116,13 @@ class MyApp extends StatelessWidget {
                       width: 80,
                       color: Colors.red,
                       margin: EdgeInsets.only(left: 15),
+                      child: CupertinoButton(
+                        child: Text('ios 按钮'),
+                        color: Colors.blue,
+                        onPressed: (){
+                          print('ios 风格按钮点击了');
+                          _showCupertinoDialog(context);
+                        },),
                     )
                   ],),
               ),
