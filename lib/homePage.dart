@@ -38,15 +38,15 @@ class MyApp extends StatelessWidget {
                   color: Colors.orange,
 //                textColor: Colors.red,
                   onPressed: (){
-                    // Navigator.pushNamed(context, 'nextPage');
-                     Future<dynamic> paramF = NativeUtils.getNativeData('navigator',{'page':'secondViewController'});
-                     paramF.then((value){
-                       print('我被点击了$value');
-                     }).catchError((error) => print(error)).whenComplete((){
-
-                     });
-
-                     NativeUtils.registerMethod();
+                    Navigator.pushNamed(context, 'nextPage');
+                     // Future<dynamic> paramF = NativeUtils.getNativeData('navigator',{'page':'secondViewController'});
+                     // paramF.then((value){
+                     //   print('我被点击了$value');
+                     // }).catchError((error) => print(error)).whenComplete((){
+                     //
+                     // });
+                     //
+                     // NativeUtils.registerMethod();
                   }
               ),
               ),

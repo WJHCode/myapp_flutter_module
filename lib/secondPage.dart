@@ -16,10 +16,11 @@ class secondPage extends StatelessWidget {
               RaisedButton(
                   child: new Text('下一页'),
                   onPressed: () {
-                    //动态路由
-                    // Navigator.push(context,MaterialPageRoute(builder:(context) => thirdPage(title:"绘声绘色"))).then((value) => print("第二页接收回调参数：${value}"));
+                    //动态路由传参
+                    // Navigator.push(context,MaterialPageRoute(builder:(context) => thirdPage(arguments: {'title':"绘声绘色"}))).then((value) => print("第二页接收回调参数：${value}"));
 
-                    Navigator.pushNamed(context, 'thirdPage')
+                    //静态路由传参
+                    Navigator.pushNamed(context,'thirdPage',arguments: {'title':"ces"})
                         .then((value) => print("第二页接收回调参数：${value}"));
 
                     // Navigator.pushNamed(context, 'methodChannelTest');

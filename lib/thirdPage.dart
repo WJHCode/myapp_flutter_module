@@ -7,12 +7,12 @@ class thirdPage extends StatelessWidget{
   Map? arguments;
 
   // thirdPage({Key? key, String? this.title}) : super(key: key);
-  thirdPage({Key? key, this.arguments}) : super(key: key);
+  thirdPage({Key? key, this.arguments,this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    print("第三页参数：${this.arguments?['title']}");
+    print("第三页参数：${arguments?['title']}");
     return Scaffold(
       appBar: AppBar(title: Text('第三页${arguments?['title']}')),
       body: new Center(
